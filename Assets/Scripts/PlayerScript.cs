@@ -114,27 +114,11 @@ public class PlayerScript : MonoBehaviour
     void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.collider.tag == "Ground")
-        {
-            if (scoreValue == 8)
-            {
-                musicSource.Stop();
-            }
-            
+        { 
             if(Input.GetKey(KeyCode.W))
             {
                 rd2d.AddForce(new Vector2(0, 3), ForceMode2D.Impulse);
             }
         }
     }
-
-    void Update()
-    {
-        if (scoreValue >= 9)
-        {
-            musicSource.clip = winning;
-            musicSource.Play();
-            musicSource.Stop();
-        }
-    }
-
 }
